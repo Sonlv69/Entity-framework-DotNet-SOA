@@ -16336,6 +16336,11 @@
       "FilePath": "c:\\Source Code\\C#\\18Nh10\\StudentApp.Mvc\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Source Code\\C#\\18Nh10\\StudentApp.Mvc\\Views\\Student\\Add.cshtml",
+      "TargetPath": "Views\\Student\\Add.cshtml",
+      "FileKind": "mvc"
     }
   ],
   "SerializationFormat": "0.2"

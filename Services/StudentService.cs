@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using StudentApp.Mvc.Models;
 
 namespace StudentApp.Mvc.Services
@@ -36,12 +37,16 @@ namespace StudentApp.Mvc.Services
 
         public Student? GetStudentById(int studentId)
         {
-            return _context.Students.FirstOrDefault(s => s.Id == studentId);
+            return _context.Students
+            .Include(s => s.Department)
+            .FirstOrDefault(s => s.Id == studentId);
         }
 
         public List<Student> GetStudents()
         {
-            return _context.Students.ToList();
+            return _context.Students
+            .Include(s => s.Department)
+            .ToList();
         }
 
         public Student? UpdateStudent(Student student)

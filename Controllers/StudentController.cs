@@ -22,5 +22,10 @@ namespace StudentApp.Mvc.Controllers
      
             return View(students);
         }
+
+        public IActionResult Add()
+        {
+            return View();
+        }
     }
 }
