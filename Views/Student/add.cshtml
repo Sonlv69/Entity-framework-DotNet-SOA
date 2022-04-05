@@ -1,5 +1,7 @@
+@model List<Department>;
 @{
     ViewData["Title"] = "Student Add";
+    var departments = Model;
 }
 
 <h1 class="display-4">Welcome to Student Add Page</h1> 
@@ -20,8 +22,10 @@
     <div class="mb-3">
         <label for="DepartmentId" class="form-label">Department</label>
         <select class="form-select" id="DepartmentId" name="DepartmentId">
-            <option value="1">18N10</option>
-            <option value="2">18n11</option>
+            @foreach (var department in departments)
+                {
+                    <option value="@department.Id">@department.Name</option>
+                }
         </select>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>

@@ -16,6 +16,7 @@ services.AddControllersWithViews();
 // services.AddSingleton<IStudentServices, StudentService>();
 services.AddScoped<IStudentServices, StudentService>();
 // services.AddTransient<IStudentServices, StudentService>();
+services.AddScoped<IDepartmentService, DepartmentService>();
 
 var app = builder.Build();
 

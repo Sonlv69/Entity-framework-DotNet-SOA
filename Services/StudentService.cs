@@ -39,10 +39,7 @@ namespace StudentApp.Mvc.Services
             return _context?.Student.FirstOrDefault(s => s.Id == id);
         }
 
-        public List<Student> GetStudents()
-        {
-            return _context?.Student.Include(s => s.Department).ToList();
-        }
+        public List<Student> GetStudents() => _context?.Student.Include(s => s.Department).ToList();
 
         public Student? UpdateStudent(Student student)
         {

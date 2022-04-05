@@ -11,8 +11,10 @@ namespace StudentApp.Mvc.Controllers
     public class StudentController : Controller
     {
         private readonly IStudentServices _studentService;
-        public StudentController(IStudentServices studentService) {
+        private readonly IDepartmentService _departmentService;
+        public StudentController(IStudentServices studentService, IDepartmentService departmentService) {
             _studentService = studentService;
+            _departmentService = departmentService;
         }
         public IActionResult Index()
         {
@@ -22,7 +24,8 @@ namespace StudentApp.Mvc.Controllers
             return View(students);
         }
         public IActionResult Add() {
-            return View();
+            var departments = _departmentService.GetDepartments();
+            return View(departments);
         }
         public IActionResult Save(Student student) {
             _studentService.AddStudent(student);
